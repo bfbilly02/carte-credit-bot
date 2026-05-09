@@ -1,29 +1,38 @@
 # CARTE Credit Auto-Claim Bot
 
-Auto-claim bot for [carte.gg](https://carte.gg) credits. Uses Manifold OAuth tokens from browser localStorage.
+Auto-claim bot for [carte.gg](https://carte.gg) credits using Manifold OAuth.
 
-## Setup
+## Requirements
 
-```bash
-pip install requests
-```
+- Python 3.8+
 
-## Usage
-
-1. Get `manideck-auth` token from browser (F12 → Application → Local Storage → carte.gg → `manideck-auth`).
-2. Paste when prompted — refresh token auto-managed.
-3. Run:
+## Quick Setup
 
 ```bash
+# 1. Clone
+git clone https://github.com/bfbilly02/carte-credit-bot.git
+cd carte-credit-bot
+
+# 2. Install deps
+pip install -r requirements.txt
+
+# 3. Run - paste your manideck-auth token when prompted
 python carte_bot.py
 ```
+
+## Getting Your Token
+
+1. Open [carte.gg](https://carte.gg) in Chrome
+2. Login with Rabby/MetaMask wallet
+3. Press F12 → Application → Local Storage → carte.gg
+4. Find `manideck-auth` — copy the JSON value
 
 ## Features
 
 - Auto-refresh token before expiry
-- Auto-claim when credits > 0
-- `dripIntervalSeconds: 300` (5 min) claim cycle
+- Auto-claim when credits available
 - Credits capped at 50
+- `dripIntervalSeconds: 300` (5 min claim cycle)
 
 ## Security
 
